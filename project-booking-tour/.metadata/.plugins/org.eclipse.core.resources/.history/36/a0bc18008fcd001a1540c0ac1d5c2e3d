@@ -1,0 +1,32 @@
+package pj.tour.repository;
+
+import java.util.List;
+import pj.tour.entity.UserEntity;
+
+public class UserRepositoryImpl implements UserRepository{
+
+	@Override
+	public List<UserEntity> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserEntity findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int update() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
