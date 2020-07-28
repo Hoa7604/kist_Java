@@ -5,19 +5,26 @@ public class AccountEntity {
 	private String username_ac;
 	private String password_ac;
 	private String nameaccount;
+	private String date;
+	private String access_right;
 	
+
 	public AccountEntity() {
 		super();
 	}
 	
-	public AccountEntity(int id, String username_ac, String password_ac, String nameaccount) {
+	public AccountEntity(int id, String username_ac, String password_ac, String nameaccount, String date, String access_right) {
 		super();
 		this.id = id;
 		this.username_ac = username_ac;
 		this.password_ac = password_ac;
 		this.nameaccount = nameaccount;
+		this.date = date;
+		this.access_right = access_right;
 	}
 	
+	
+
 	public int getId() {
 		return id;
 	}
@@ -43,4 +50,19 @@ public class AccountEntity {
 		this.nameaccount = nameaccount;
 	}
 	
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+	
+	public String getAccess_right() {
+		return access_right;
+	}
+
+	public void setAccess_right(String access_right) {
+		this.access_right = access_right;
+	}
 }

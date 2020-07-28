@@ -1,0 +1,38 @@
+package pj.tour;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+import pj.tour.entity.AccountEntity;
+import pj.tour.entity.UserEntity;
+import pj.tour.repository.UserRepository;
+import pj.tour.repository.UserRepositoryImpl;
+import pj.tour.repository.account.AccountRepository;
+import pj.tour.repository.account.AccountRepositoryImpl;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		UserRepository userReponsitory = new UserRepositoryImpl();
+		Scanner input = new Scanner(System.in);
+		
+//		List<UserEntity> ls = new ArrayList<UserEntity>();
+//		ls = userReponsitory.findAll();
+//		for (int i = 0; i < ls.size(); i++) {
+////			System.out.println(ls.get(i).getName());
+//		}
+//		
+		
+		
+		AccountEntity account = new AccountEntity();
+		List<AccountEntity> listAccount = new ArrayList<AccountEntity>();		
+		
+		AccountRepository accountRepository = new AccountRepositoryImpl() ;
+		accountRepository.registerACcount(account);	
+
+	}
+
+}

@@ -1,0 +1,78 @@
+package pj.tour;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+import pj.tour.entity.AccountEntity;
+import pj.tour.entity.TourEntity;
+import pj.tour.entity.UserEntity;
+import pj.tour.repository.AdminRepository;
+import pj.tour.repository.AdminRepositoryImpl;
+import pj.tour.repository.UserRepository;
+import pj.tour.repository.UserRepositoryImpl;
+import pj.tour.repository.account.AccountRepository;
+import pj.tour.repository.account.AccountRepositoryImpl;
+import pj.tour.repository.account.LoginAccount;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		boolean check = true;
+		UserRepository userReponsitory = new UserRepositoryImpl();
+		Scanner input = new Scanner(System.in);				
+		
+		AccountEntity account = new AccountEntity();
+		TourEntity tour = new TourEntity();
+		List<AccountEntity> listAccount = new ArrayList<AccountEntity>();		
+		AccountRepository accountRepository = new AccountRepositoryImpl() ;
+		LoginAccount loginaccount = new AccountRepositoryImpl();
+		AdminRepository adminRepository = new AdminRepositoryImpl();
+		
+		String chooseAuthority ;
+		System.out.println("1.Sign up | 2. Log in");
+		chooseAuthority = input.next();		
+		switch (chooseAuthority) {
+		case "1":
+			accountRepository.registerAccount(account);	
+			loginaccount.logInAccount(account);
+			break;
+		case "2":
+			String checkRole = loginaccount.logInAccount(account);
+			System.out.println(checkRole);
+			if (checkRole.equals("admin")) {				
+				System.out.println("1.addTour -- 2.deleteTour -- 3.updateTour -- 4.deleteUser");
+				String chooseOption = input.next();
+				do {
+					switch (chooseOption) {
+					case "1":
+//						adminRepository.addTour(tour);
+						System.out.println("want to continute!");
+						if (check) {
+							check = true;
+						}else {
+							check = false;
+						}
+						break;
+
+					default:
+						break;
+					}
+				} while (check);
+				
+				
+			}else if (checkRole.equals("user")) {
+				System.out.println("let's do it author user");
+			}
+			break;
+		default:
+			break;
+		}
+		
+//		accountRepository.registerAccount(account);	
+
+	}
+
+}
