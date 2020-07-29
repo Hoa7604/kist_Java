@@ -28,26 +28,27 @@ public class UserRepositoryImpl implements UserRepository{
 	}
 	
 	@Override
-	public List<UserEntity> findAll() {
+	public List<TourEntity> findAll() {
 		// TODO Auto-generated method stub
-		List<UserEntity> lsUser = new ArrayList<UserEntity>();
-		String queryString = "SELECT * FROM user";
+		List<TourEntity> tourlists = new ArrayList<TourEntity>();
+		String queryString = "SELECT * FROM tour";
 		
 		try {
-			connection = getConnection();
-			
+			connection = getConnection();	
 			stmt = connection.prepareStatement(queryString);
 			rs = stmt.executeQuery(); //Select
 			
 			while(rs.next()) {
-				UserEntity user = new UserEntity();
+				TourEntity cus = new TourEntity();
 				
-				user.setId(rs.getInt(1));
-				user.setName(rs.getString("name"));
-				user.setAddress(rs.getString("address"));
-				//cus.setTeam(rs.getString("team"));
+				cus.setName_tour(rs.getString("name_Tour"));
+				cus.setLocation_start(rs.getString("location_start"));
+				cus.setTime_start(rs.getString("time_start"));
+				cus.setDate_start(rs.getString("date_start"));
+				cus.setMem_number(rs.getInt("mem_number"));
+				cus.setDay_number(rs.getInt("day_number"));
 				
-				lsUser.add(user);
+				tourlists.add(cus); 
 			}
 	
 		} catch (SQLException e) {
@@ -69,9 +70,8 @@ public class UserRepositoryImpl implements UserRepository{
 			catch (SQLException e) {
 				System.out.println(e);
 			}
-			
 		}
-		return lsUser;
+		return tourlists;
 }
 
 	@Override
@@ -79,24 +79,10 @@ public class UserRepositoryImpl implements UserRepository{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
-	
-	@Override
-	public int update() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int delete() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 
 	@Override
-	public int add() {
+	public int addInfo() {
 		// TODO Auto-generated method stub
 		try {
 			String queryString = "INSERT INTO "
@@ -129,30 +115,37 @@ public class UserRepositoryImpl implements UserRepository{
 	}
 
 	@Override
-	public List<TourEntity> findTour() {
+	public void findTour(){
 		// TODO Auto-generated method stub
-		List<UserEntity> lsUser = new ArrayList<UserEntity>();
-		String queryString = "SELECT * FROM Tour where name_tour = ? and date_tour = ?";
-		String nameTour = null;
-		String dateStart = null;
+		boolean check = true;
+		List<TourEntity> listTours = new ArrayList<TourEntity>();
+		String queryString = "SELECT * FROM Tour where location_start = ?";
+		
 		try {
-			connection = getConnection();
-			
-			stmt = connection.prepareStatement(queryString);
-			rs = stmt.executeQuery(); //Select
-			System.out.println("Enter location: ");
-			nameTour = input.next();
-			System.out.println("Enter date start: ");
-			dateStart = input.next();
-			if(rs.next()) {
-				TourEntity tour = new TourEntity();
+			do {
+				System.out.println("Enter location: ");
+				String location = input.next();
+				connection = getConnection();
+				stmt = connection.prepareStatement(queryString);
+				stmt.setString(1, location);
+				rs = stmt.executeQuery(); //Select	
 				
-//				tour.setId(rs.getInt(1));
-//				tour.setName(rs.getString("name"));
-//				tour.setAddress(rs.getString("address"));
-//				
-//				lsUser.add(tour);
-			}
+				if(rs.next()) {
+					if (location.equals(rs.getString("location_start")) ) {						
+						listTours = showListTour(location);
+						for (int i = 0; i < listTours.size(); i++) {
+							System.out.println("Id_tour: " + listTours.get(i).getTour_id() + "  ");
+							System.out.print("Name_tour: " + listTours.get(i).getName_tour()+" -- ");
+							System.out.print("location_start: " + listTours.get(i).getLocation_start()+" -- ");
+							System.out.print("time_start: " + listTours.get(i).getTime_start()+" -- ");
+							System.out.print("date_start: " + listTours.get(i).getDate_start()+" -- ");
+							System.out.println("day_number: " + listTours.get(i).getDay_number() + " day");
+						}
+						check = false;
+					}
+				}
+			} while (check);
+			
 	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -175,8 +168,56 @@ public class UserRepositoryImpl implements UserRepository{
 			}
 			
 		}
-//		return lsUser;
-		return null;
 	}
+
+	@Override
+	public List<TourEntity> showListTour(String location) {
+		// TODO Auto-generated method stub
+		
+		List<TourEntity> tourlists = new ArrayList<TourEntity>();
+		String queryString = "SELECT * FROM tour WHERE location_start = ?";
+		
+		try {
+			connection = getConnection();
+			stmt = connection.prepareStatement(queryString);
+			stmt.setString(1, location);
+			rs = stmt.executeQuery(); //Select	
+			
+			while(rs.next()) {
+				TourEntity cus = new TourEntity();	
+				cus.setTour_id(rs.getString("tour_id"));
+				cus.setName_tour(rs.getString("name_Tour"));
+				cus.setLocation_start(rs.getString("location_start"));
+				cus.setTime_start(rs.getString("time_start"));
+				cus.setDate_start(rs.getString("date_start"));
+				cus.setMem_number(rs.getInt("mem_number"));
+				cus.setDay_number(rs.getInt("day_number"));
+				
+				tourlists.add(cus); 
+			}
+	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (stmt != null) {
+					stmt.close();
+				}
+				if (rs != null) {
+					rs.close();
+				}
+			}
+			catch (SQLException e) {
+				System.out.println(e);
+			}
+		}
+		return tourlists;
+	}
+
 	
 }

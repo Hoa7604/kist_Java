@@ -156,26 +156,29 @@ public class AccountRepositoryImpl implements AccountRepository, CheckAccessRigh
 				connection = getConnection();
 				stmt = connection.prepareStatement(quertString);
 				stmt.setString(1, userNameLogin);
-				stmt.setString(2, passWordLogin);
+				stmt.setString(2, passWordLogin);				
 				rs = stmt.executeQuery();
+				
 				if (rs.next()) {
 					if (userNameLogin.equals(rs.getString("username_ac"))
 							&& passWordLogin.equals(rs.getString("password_ac"))) {
 						System.out.println("login Success!! ");
 						boolean check = checkAccess(userNameLogin);
+						
 						if (check) {
 							System.out.println("Authority "+ rs.getString("access_right"));
 						}else {
 							System.out.println("Authority " + rs.getString("access_right"));
 						}
 					}
+					login = false;
 				} else {
-					System.out.println("Username or Password not correct!! Please Enter Again !! ");
+					System.out.println("Username or Password not correct!! Please Try Again !! ");
 				}
 				
-				login = false;
-				return rs.getString("access_right");
+				
 			}while(login);
+			return rs.getString("access_right");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -230,7 +233,7 @@ public class AccountRepositoryImpl implements AccountRepository, CheckAccessRigh
 			nameAccountSignin = input.next();
 			account.setNameaccount(nameAccountSignin);
 			
-			System.out.println("Access_right: ");
+			System.out.println("Access_right: "); //gan thang cho user
 			accessRight = input.next();
 			account.setAccess_right(accessRight);
 			

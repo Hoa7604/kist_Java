@@ -22,6 +22,9 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="pj.tour.entity.TourEntity"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="pj.tour.repository.BookingTour"/>
+<fullyQualifiedTypeName name="pj.tour.repository.booking.BookingTour"/>
+<fullyQualifiedTypeName name="pj.tour.repository.booking.BookingRepositoryImpl"/>
+<fullyQualifiedTypeName name="pj.tour.entity.TourEntity"/>
 </qualifiedTypeNameHistroy>

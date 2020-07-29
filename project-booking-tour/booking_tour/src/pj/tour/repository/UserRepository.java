@@ -7,10 +7,9 @@ import pj.tour.entity.TourEntity;
 import pj.tour.entity.UserEntity;
 
 public interface UserRepository {
-	List<UserEntity> findAll();
+	List<TourEntity> findAll();
 	UserEntity findById(int id);
-	List<TourEntity> findTour();
-	int add();
-	int update();
-	int delete();
+	void findTour();
+	int addInfo();
+	List<TourEntity> showListTour(String location);
 }

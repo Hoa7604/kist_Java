@@ -7,13 +7,14 @@ public class TourEntity {
 	private String time_start;
 	private String date_start;
 	private int mem_number;
+	private int day_number;
 	
 	public TourEntity() {
 		super();
 	}
 
 	public TourEntity(String tour_id, String name_tour, String location_start, String time_start, String date_start,
-			int mem_number) {
+			int mem_number, int day_number) {
 		super();
 		this.tour_id = tour_id;
 		this.name_tour = name_tour;
@@ -21,8 +22,17 @@ public class TourEntity {
 		this.time_start = time_start;
 		this.date_start = date_start;
 		this.mem_number = mem_number;
+		this.day_number = day_number;
 	}
 	
+	public int getDay_number() {
+		return day_number;
+	}
+
+	public void setDay_number(int day_number) {
+		this.day_number = day_number;
+	}
+
 	public String getTour_id() {
 		return tour_id;
 	}
