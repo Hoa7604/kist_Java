@@ -1,0 +1,94 @@
+*{margin: 0; padding: 0; font-family: 'Rubik', sans-serif; font-weight: 500;}
+
+.font-style1 {font-weight: 100;}
+.font-style2 {font-weight: 300;}
+.font-style3 {font-weight: 400;}
+.font-style4 {font-weight: 500;}
+.font-style5 {font-weight: 700;}
+.font-style6 {font-weight: 900;}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+header {
+    height: 13vh;
+    width: 100%;
+    /* background-color: #353b47; */
+     position: fixed;
+}
+header nav {
+    width: 100%;
+    height: 100%    ;
+    background-color: #fff;
+    border-radius: 100px 100px;
+    box-shadow: 0 1px 5px #333;
+}
+header nav .container {
+    padding-top: 20px;
+}
+header nav .container a {
+    display: inline-block;
+     float: left;
+     vertical-align: middle;
+    }
+header nav .container a img {}
+
+header nav .container button {display: none;}
+header nav .container button span {color: #fff; font-weight: 700;}
+
+header nav .container #navbars-rs-food {
+    display: inline-block;
+    float: right;
+}
+header nav .container #navbars-rs-food ul {padding-top: 20px; overflow: hidden;}
+header nav .container #navbars-rs-food ul li {
+    list-style: none;
+    display: inline-block;
+    float: left;
+    position: relative;
+    height: 200px;
+}
+header nav .container #navbars-rs-food ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    color: #353b47;
+    transition: 0.4s;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+header nav .container #navbars-rs-food ul li a:hover, .active{
+    background-color: #d65106;
+    border-radius: 5px;
+    color: #fff;
+}
+
+header nav .container #navbars-rs-food ul li>div.drop-menu {
+    width: 165px;
+    /* border: 1px solid #f00; */
+    background-color: #fff;
+    position: absolute;
+    top: 45px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+}
+
+/* header nav .container #navbars-rs-food ul li>div.drop-menu:first-child{
+    display: none;
+} */
+
+header nav .container #navbars-rs-food ul li>div.drop-menu>a{
+    display: block;
+    padding: 0;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
