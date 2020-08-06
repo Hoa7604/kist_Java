@@ -1,5 +1,15 @@
 window.onload = function(){
-    
+    document.captureEvents(MouseEvent);
+    document.onmousedown = mouseEvent;
+    function mouseEvent(e){
+        if( e.which == 1){
+            showIdx = document.querySelectorAll('.drop-menu');
+            for(var i = 0; i < showIdx.length; i++){
+                showIdx[i].style.display = 'none';
+            }
+        }
+        
+    }
 }
 
 //active class
