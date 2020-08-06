@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="css/style.css">    
     <!-- Custom CSS for each page -->
     <link rel="stylesheet" href="css/custom.css">
-
+	<!-- Font awesome css -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
 
     <!--[if lt IE 9]>
@@ -75,11 +76,11 @@
 	<input id="check2" name="slide-radio" type="radio">
 	<input id="check3" name="slide-radio" type="radio">
 	<div id="slides">
-		<ul >
-			<li >
+		<ul class="slide-wrap">
+			<li>
 				<img src="images/slider-01.jpg" alt="">
 				<div class="wrap-text">
-					<div class="sub-wrap-text">
+					<div class="sub-wrap-text container">
 						<div class="last-sub-wrap">
 							<h1 ><strong>Welcome To <br> Live Dinner Restaurant</strong></h1>
 							<p >See how your users experience your website in realtime or view  <br> 
@@ -89,10 +90,10 @@
 					</div>
 				</div>
 			</li>
-			<li >
+			<li>
 				<img src="images/slider-02.jpg" alt="">
 				<div class="wrap-text">
-					<div class="sub-wrap-text">
+					<div class="sub-wrap-text container">
 						<div class="last-sub-wrap">
 							<h1 ><strong>Welcome To <br> Live Dinner Restaurant</strong></h1>
 							<p >See how your users experience your website in realtime or view  <br> 
@@ -102,10 +103,10 @@
 					</div>
 				</div>
 			</li>
-			<li >
+			<li>
 				<img src="images/slider-03.jpg" alt="">
 				<div class="wrap-text">
-					<div class="sub-wrap-text">
+					<div class="sub-wrap-text container">
 						<div class="last-sub-wrap">
 							<h1 ><strong>Welcome To <br> Yamifood Restaurant</strong></h1>
 							<p >See how your users experience your website in realtime or view  <br> 
@@ -116,41 +117,40 @@
 				</div>
 			</li>
 		</ul>
-		<ul class="slide-paging">
-			<li class="paging1">
+		<ul class="slide-paging" >
+			<li class="paging1" onclick="changeDot(1)">
 				<label for="check1">
 					<span class="disc"></span>
-					
 				</label>
 			</li>
 
-			<li class="paging2">
+			<li class="paging2" onclick="changeDot(2)">
 				<label for="check2">
-					<span class="disc"></span>
+					<span class="disc" ></span>
 				
 				</label>
 			</li>
 
-			<li class="paging3">
+			<li class="paging3" onclick="changeDot(3)">
 				<label for="check3">
 					<span class="disc"></span>
 					
 				</label>
 			</li>
 		</ul>
-		<div>
-			<a href="#"><i aria-hidden="true"></i></a>
-			<a href="#"><i aria-hidden="true"></i></a>
+		<div class="slides-navigation">
+			<a class="prev" href="#" onclick="activeChange(-1)"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+			<a class="next" href="#" onClick="activeChange(1)"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
 		</div>
 	</div>
 	<!-- End slides -->
 	
 	<!-- Start About -->
-	<div>
-		<div >
-			<div >
-				<div>
-					<div>
+	<div id="about-cnt">
+		<div class="container">
+			<div class="row">
+				<div class="wrap-text">
+					<div class="sub-wrap">
 						<h1>Welcome To <span>Live Dinner Restaurant</span></h1>
 						<h4>Little Story</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
@@ -158,7 +158,7 @@
 						<a href="#">Reservation</a>
 					</div>
 				</div>
-				<div >
+				<div class="wrap-img">
 					<img src="images/about-img.jpg" alt="" >
 				</div>
 			</div>
@@ -167,10 +167,10 @@
 	<!-- End About -->
 	
 	<!-- Start QT -->
-	<div>
-		<div >
-			<div >
-				<div>
+	<div class="qt-wrap">
+		<div class="container" >
+			<div class="row">
+				<div class="wrap">
 					<p>
 						" If you're not the one cooking, stay out of the way and compliment the chef. "
 					</p>
@@ -182,20 +182,20 @@
 	<!-- End QT -->
 	
 	<!-- Start Menu -->
-	<div>
-		<div >
-			<div >
-				<div >
-					<div >
+	<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<div class="title-box">
+					<div class="wrap-title">
 						<h2>Special Menu</h2>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
 					</div>
 				</div>
 			</div>
 			
-			<div >
-				<div >
-					<div id="v-pills-tab" role="tablist" aria-orientation="vertical">
+			<div class="row">
+				<div class="side-left">
+					<div id="v-pills-tab" role="tablist" aria-orientation="vertical" class="wrap-pills-tab">
 						<a id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">All</a>
 						<a id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Drinks</a>
 						<a id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Lunch</</a>
@@ -203,12 +203,12 @@
 					</div>
 				</div>
 				
-				<div >
+				<div class="side-right">
 					<div id="v-pills-tabContent">
-						<div id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-							<div >
-								<div >
-									<div >
+						<div id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" class="wrap-pills-home">
+							<div class="row">
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-01.jpg" alt="Image">
 										<div >
 											<h4>Special Drinks 1</h4>
@@ -218,10 +218,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery" >
 										<img src="images/img-02.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text" >
 											<h4>Special Drinks 2</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $9.79</h5>
@@ -229,8 +229,8 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-03.jpg" alt="Image">
 										<div >
 											<h4>Special Drinks 3</h4>
