@@ -1,0 +1,5 @@
+package tp.kits3.demo;
+
+public interface Servlet {
+
+}

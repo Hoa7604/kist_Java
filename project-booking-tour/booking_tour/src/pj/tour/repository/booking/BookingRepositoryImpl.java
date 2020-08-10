@@ -182,6 +182,7 @@ public class BookingRepositoryImpl implements BookingTour{
 				cus.setDate_start(rs.getString("date_start"));
 				cus.setMem_number(rs.getInt("mem_number"));
 				cus.setDay_number(rs.getInt("day_number"));				
+				cus.setPrice_tour(rs.getInt("price_tour"));
 				
 				tourlists.add(cus);
 			}
@@ -210,7 +211,7 @@ public class BookingRepositoryImpl implements BookingTour{
 	}
 
 	@Override
-	public void bookingTour() {
+	public String bookingTour() {
 		// TODO Auto-generated method stub
 		boolean check = true;
 		List<TourEntity> listTours = new ArrayList<TourEntity>();
@@ -235,19 +236,20 @@ public class BookingRepositoryImpl implements BookingTour{
 						System.out.print("location_start: " + listTours.get(0).getLocation_start()+" -- ");
 						System.out.print("time_start: " + listTours.get(0).getTime_start()+" -- ");
 						System.out.print("date_start: " + listTours.get(0).getDate_start()+" -- ");
-						System.out.println("day_number: " + listTours.get(0).getDay_number() + " day");
+						System.out.print("day_number: " + listTours.get(0).getDay_number() + "day --");
+						System.out.println("price_tour: "+ listTours.get(0).getPrice_tour()+"$");
 						
 						int count = listTours.get(0).getMem_number() + 1;
-						System.out.println("plus: "+ count);
+//						System.out.println("plus: "+ count);
 						cus.setMem_number(count);
 						cus.setTour_id(id);
 						plusNumberMember(cus);
 						check = false;
 					}
 				}
+				return id;
 			} while (check);
 			
-	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -269,6 +271,7 @@ public class BookingRepositoryImpl implements BookingTour{
 			}
 			
 		}
+		return null;
 	}
 	
 

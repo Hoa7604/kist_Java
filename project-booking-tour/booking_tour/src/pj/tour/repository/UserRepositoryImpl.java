@@ -82,17 +82,29 @@ public class UserRepositoryImpl implements UserRepository{
 
 
 	@Override
-	public int addInfo() {
+	public void updateInfo() {
 		// TODO Auto-generated method stub
+		
+		System.out.println("Enter ID: ");
+		String id = input.next();
+		System.out.println("name: ");
+		String name = input.next();
+		System.out.println("gmail: ");
+		String gmail = input.next();
+		System.out.println("PhoneNumber: ");
+		String phoneNumber = input.next();
+		System.out.println("Address: ");
+		String address = input.next();
+				
 		try {
-			String queryString = "INSERT INTO "
-		+"user(name, dprtmt_id, rank_id, reg_id, reg_date, updt_id, updt_date)" 
-		+"VALUES(?,?,?,?,now(),?,now())";
+			String queryString = "update user set name = ?,  gmail = ?, phonenumber = ?, address = ? where id = ?" ;
 			connection = getConnection();
 			stmt = connection.prepareStatement(queryString);
-//			stmt.setString(1, dto.getName());
-//			stmt.setString(2, dto.getDprtmt_id());
-//			stmt.setString(3, dto.getRank_id());
+			stmt.setString(1, name);
+			stmt.setString(2, gmail);
+			stmt.setString(3, phoneNumber);
+			stmt.setString(4, address);
+			stmt.setString(5, id);
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO: handle exception
@@ -111,9 +123,9 @@ public class UserRepositoryImpl implements UserRepository{
 				e.printStackTrace();
 			}
 		}
-		return 0;
 	}
 
+	
 	@Override
 	public void findTour(){
 		// TODO Auto-generated method stub
@@ -139,7 +151,8 @@ public class UserRepositoryImpl implements UserRepository{
 							System.out.print("location_start: " + listTours.get(i).getLocation_start()+" -- ");
 							System.out.print("time_start: " + listTours.get(i).getTime_start()+" -- ");
 							System.out.print("date_start: " + listTours.get(i).getDate_start()+" -- ");
-							System.out.println("day_number: " + listTours.get(i).getDay_number() + " day");
+							System.out.print("day_number: " + listTours.get(i).getDay_number() + " day --");
+							System.out.println("price_tour: "+ listTours.get(0).getPrice_tour()+"$");
 						}
 						check = false;
 					}
@@ -192,6 +205,7 @@ public class UserRepositoryImpl implements UserRepository{
 				cus.setDate_start(rs.getString("date_start"));
 				cus.setMem_number(rs.getInt("mem_number"));
 				cus.setDay_number(rs.getInt("day_number"));
+				cus.setPrice_tour(rs.getInt("price_tour"));
 				
 				tourlists.add(cus); 
 			}
@@ -219,5 +233,10 @@ public class UserRepositoryImpl implements UserRepository{
 		return tourlists;
 	}
 
-	
+	@Override
+	public void inputMoney() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -1,0 +1,10 @@
+package tp.kits3.demo;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+//must mapping URL
+@WebServlet("/Login1")
+public class LoginMotServlet extends HttpServlet {
+	//servlet's role process request from client
+	//doGET, doPOST
+}

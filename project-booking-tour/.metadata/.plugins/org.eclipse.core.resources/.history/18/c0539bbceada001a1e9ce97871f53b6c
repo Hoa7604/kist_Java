@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>req & res demo</title>
+</head>
+<body>
+	<h1>from demo for Servlet</h1>
+	<div>
+		<form method="get" action="login"></form>
+	</div>
+	
+</body>
+</html>

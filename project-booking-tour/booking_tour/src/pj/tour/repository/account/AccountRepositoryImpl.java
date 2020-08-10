@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -72,12 +73,18 @@ public class AccountRepositoryImpl implements AccountRepository, CheckAccessRigh
 			String queryString = "INSERT INTO " + "user_account(username_ac, password_ac, nameaccount , access_right)"
 					+ "VALUES(?,?,?,?)";
 			connection = getConnection();
-			stmt = connection.prepareStatement(queryString);
+			stmt = connection.prepareStatement(queryString, Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, acc.getUsername_ac());
 			stmt.setString(2, acc.getPassword_ac());
 			stmt.setString(3, acc.getNameaccount());
 			stmt.setString(4, acc.getAccess_right());
 			stmt.executeUpdate();
+//			rs = stmt.getGeneratedKeys();
+//			while (rs.next()) {
+//				int idUser = rs.getInt("id");
+//				return idUser;
+//			}
+			
 		} catch (SQLException e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -204,13 +211,14 @@ public class AccountRepositoryImpl implements AccountRepository, CheckAccessRigh
 	
 	@Override
 	public void registerAccount(AccountEntity account) {
+		UserEntity user = new UserEntity();
 		String userNamesigin = null;
 		String passWordSignin = null;
 		String nameAccountSignin = null;
 		String accessRight = null;
 		try {
 			while (login) {
-				System.out.print("username: ");
+				System.out.print("username: "); 	
 				userNamesigin = input.next();
 				String quertString = "Select username_ac from user_account where username_ac = ?";
 				connection = getConnection();
@@ -233,14 +241,16 @@ public class AccountRepositoryImpl implements AccountRepository, CheckAccessRigh
 			nameAccountSignin = input.next();
 			account.setNameaccount(nameAccountSignin);
 			
-			System.out.println("Access_right: "); //gan thang cho user
-			accessRight = input.next();
+			accessRight = "user";
 			account.setAccess_right(accessRight);
 			
 			addAccount(account);
-			System.out.println(" Register Done!!");
+			System.out.println("Register Done!!");
+						
+//			int id = addAccount(account);
+//			System.out.println("show: "+ id);
 			
-//			logInAccount(account);
+			addUserInfo(user);
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -263,6 +273,7 @@ public class AccountRepositoryImpl implements AccountRepository, CheckAccessRigh
 		
 	}
 
+	
 	
 	@Override
 	public boolean checkAccess(String name) {
@@ -300,6 +311,97 @@ public class AccountRepositoryImpl implements AccountRepository, CheckAccessRigh
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public void addUserInfo(UserEntity user) {
+		// TODO Auto-generated method stub
+		String name = null;
+		System.out.print("name: ");
+		name = input.next();
+		
+		String gmail = null;
+		System.out.print("gmail: ");
+		gmail = input.next();
+		
+		String ex = null;
+		System.out.print("Ex(famale/male): ");
+		ex = input.next();
+		
+		String phonenumber = null;
+		System.out.print("phonenumber: ");
+		phonenumber = input.next();
+		
+		String address = null;
+		System.out.print("address: ");
+		address = input.next();
+		
+//		String id_ac = checkId(name);
+//		System.out.println("show: "+ id_ac);
+		
+		try {
+			String queryString = "INSERT INTO user(name, gmail, ex, birthday, phonenumber, address) VALUES(?,?,?,now(),?,?)";
+			connection = getConnection();
+			stmt = connection.prepareStatement(queryString);
+			stmt.setString(1, name);
+			stmt.setString(2, gmail);
+			stmt.setString(3, ex);
+			stmt.setString(4, phonenumber);
+			stmt.setString(5, address);
+//			stmt.setInt(6, id_ac);
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			try {
+				if (stmt != null) {
+					stmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public String checkId(String name) {
+		// TODO Auto-generated method stub
+		try {
+			String quertString = "Select id from user_account where username_ac = ?";
+			connection = getConnection();
+			stmt = connection.prepareStatement(quertString);
+			stmt.setString(1, name);
+			rs = stmt.executeQuery();
+			if (rs.next()) {  // column __ 
+				String returnid = rs.getString("id");
+				System.out.println("show check: "+ returnid);
+			} 
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (stmt != null) {
+					stmt.close();
+				}
+				if (rs != null) {
+					rs.close();
+				}
+			}
+			catch (SQLException e) {
+				System.out.println(e);
+			}
+		}
+		return null;
 	}
 
 	

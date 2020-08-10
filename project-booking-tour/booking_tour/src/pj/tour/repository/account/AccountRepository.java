@@ -12,4 +12,5 @@ public interface AccountRepository {
 	int deleteAccount();
 	void updateAccount(AccountEntity acc);
 	void addAccount(AccountEntity acc);
+	String checkId(String id);
 }
