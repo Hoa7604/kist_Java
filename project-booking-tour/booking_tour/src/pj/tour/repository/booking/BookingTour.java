@@ -6,7 +6,7 @@ import pj.tour.entity.TourEntity;
 import pj.tour.entity.UserEntity;
 
 public interface BookingTour {
-	void bookingTour();
+	String bookingTour();
 	List<TourEntity> findAll();
 	String findById();
 	int addInfo();

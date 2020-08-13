@@ -157,13 +157,21 @@ public class AdminRepositoryImpl implements AdminRepository, InputData{
 		System.out.print("dateStart(yyyy-mm-dd): ");
 		dateStart = input.next();
 		
+		int dayNumber;
+		System.out.print("dayNumber: ");
+		dayNumber = input.nextInt();
+		
+		int priceTour;
+		System.out.print("priceTour: ");
+		priceTour = input.nextInt();
+		
 		int memCount = 0;
 		System.out.println("memCount: ");
 		
 		try {
 			String queryString = "INSERT INTO "
-		+"tour(name_tour, location_start, time_start, date_start, mem_number)" 
-		+"VALUES(?,?,?,?,?)";
+		+"tour(name_tour, location_start, time_start, date_start, mem_number, day_number, price_tour)" 
+		+"VALUES(?,?,?,?,?,?,?)";
 			connection = getConnection();
 			stmt = connection.prepareStatement(queryString);
 			stmt.setString(1, nameTour);
@@ -171,7 +179,9 @@ public class AdminRepositoryImpl implements AdminRepository, InputData{
 			stmt.setString(3, timeStart);
 			stmt.setString(4, dateStart);
 			stmt.setInt(5, memCount);
-			stmt.executeUpdate();
+			stmt.setInt(6, dayNumber);
+			stmt.setInt(7, priceTour);
+			stmt.executeUpdate();			
 			
 		} catch (SQLException e) {
 			// TODO: handle exception

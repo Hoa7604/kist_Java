@@ -10,6 +10,7 @@ public interface UserRepository {
 	List<TourEntity> findAll();
 	UserEntity findById(int id);
 	void findTour();
-	int addInfo();
+	void updateInfo();
 	List<TourEntity> showListTour(String location);
+	void inputMoney();
 }
