@@ -38,10 +38,10 @@ public class ContactAddServlet extends HttpServlet {
 		form += "Contact.subphone: <input type='text' name='subphone' require/><br>";
 		form += "Contact.email: <input type='address' name='email' require/><br>";
 		form += "Contact.address: <input type='text' name='address' require/><br>";
-		form += "Contact.unused: <input type='text' name='unused' /><br>";
+		form += "Contact.unused: <input type='checkbox' name='unused' /><br>";
 		form += "Contact.openning: <input type='text' name='opening' require/><br>";
-		form += "Contact.weekday: <input type='date' name='weekday' require/><br>";
-		form += "Contact.weekend: <input type='date' name='weekend' require/><br>";
+		form += "Contact.weekday: <input type='text' name='weekday' require/><br>";
+		form += "Contact.weekend: <input type='text' name='weekend' require/><br>";
 		form += "Contact.aboutus: <input type='text' name='aboutus' require/><br>";
 		form += "Contact.latitude: <input type='text' name='latitude' /><br>";
 		form += "Contact.logitude: <input type='text' name='logitude' />";
@@ -63,17 +63,19 @@ public class ContactAddServlet extends HttpServlet {
 		contact.setSubphone(request.getParameter("subphone"));
 		contact.setEmail(request.getParameter("email"));
 		contact.setAddress(request.getParameter("address"));
+		boolean a = true;
 		if (request.getParameter("unused") != null) {
-			contact.setUnused(true);
+			a = true;
 		}else {
-			contact.setUnused(false);
+			a = false;
 		}
+		contact.setUnused(a);
 		contact.setOpening(request.getParameter("opening"));
 		contact.setWeekday(request.getParameter("weekfay"));
 		contact.setWeekend(request.getParameter("weekend"));
 		contact.setAboutus(request.getParameter("aboutus"));
-		contact.setLogitude(Double.parseDouble(request.getParameter("latitude")));
-		contact.setLogitude(Double.parseDouble(request.getParameter("golitude")));
+		contact.setLatitude(Double.parseDouble(request.getParameter("latitude")));
+		contact.setLogitude(Double.parseDouble(request.getParameter("logitude")));
 		
 		dao.save(contact);
 		doGet(request, response);

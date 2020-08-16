@@ -148,4 +148,12 @@ public class Contact {
         this.latitude = param.getLatitude();
         this.logitude = param.getLogitude();
     }
+
+	@Override
+	public String toString() {
+		return "Contact [coid=" + coid + ", coname=" + coname + ", priphone=" + priphone + ", subphone=" + subphone
+				+ ", email=" + email + ", address=" + address + ", unused=" + unused + ", opening=" + opening
+				+ ", weekday=" + weekday + ", weekend=" + weekend + ", aboutus=" + aboutus + ", latitude=" + latitude
+				+ ", logitude=" + logitude + "]";
+	}
 }

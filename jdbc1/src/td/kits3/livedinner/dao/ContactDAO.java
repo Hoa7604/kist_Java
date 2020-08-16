@@ -29,6 +29,7 @@ public class ContactDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+//		System.out.println(contact.toString());
 		try {
 			conn = this.datasource.getConnection();
 			String insert = "insert into contact (coname, priphone, subphone, email, address,unused, opening, weekday, weekend, aboutus, latitude, logitude) values(?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -38,16 +39,14 @@ public class ContactDAO {
 			pstmt.setString(3,  contact.getSubphone());
 			pstmt.setString(4,  contact.getEmail());
 			pstmt.setString(5, contact.getAddress());
-			if(contact.getUnused() == true) {
-				pstmt.setBoolean(6, 1);
-			}
-			
+			pstmt.setBoolean(6, contact.getUnused());	
 			pstmt.setString(7, contact.getOpening());
 			pstmt.setString(8, contact.getWeekday());
 			pstmt.setString(9,  contact.getWeekend());
 			pstmt.setString(10, contact.getAboutus());
 			pstmt.setDouble(11,  contact.getLatitude());
 			pstmt.setDouble(12,  contact.getLogitude());
+			
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception

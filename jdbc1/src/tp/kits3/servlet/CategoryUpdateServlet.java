@@ -31,7 +31,7 @@ public class CategoryUpdateServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		int ctgid = Integer.parseInt(request.getParameter("ctgid"));
-		System.out.println(ctgid);
+//		System.out.println(ctgid);
 		CategoryDao dao = new CategoryDao();
 		Category category = dao.findOne(ctgid); //selectOne
 		if (category == null) {
