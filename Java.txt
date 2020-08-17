@@ -1,0 +1,106 @@
+Git
+change branch (head)
+
+shutdown.bat // ngừng chạy chương trình
+startUp.bat //chạy chương trình
+
+webshop:
+-web-inf(defaul)->classes, lib, web.xml
+
+context
+-reloadable="true" (sửa và truy cập ngay lúc đó)
+
+conf
+- chứa các file cài đặt
+
+servlet: 
+-interface (javax.servlet.setvlet)
+	-init (servletconfig config)
+
+
+DBMS
+
+
+- ODBC API
+- vendor API
+
+-JDBC
+*********************
+servlet : lofic process request
+	Dao: data access object like broker between servlet and db
+vo: type of data from DB
+
+- DataSource
+- forwarding
+HttpserverResponse.sendDirect("url")
+//location.redirect = ""
+
+##dispath
+//dont change URL
+
+dispatcher : sử dụng 2 dispatch (servlet) với nhau
+servletcontext : chia sẻ với tất cả các servlet 
+
+1.bidding
+setAttribute
+Getattribute
+
+**************************
+2.CookieServlet (save in client)
+-setCookie (cookie class)
+-response.addCookie()
+-response.getCookies()
+
+****************************
+3.Session (session in server)
+-request.getSession() take
+-session.setAttribute() set value session
+-session.getAttribute() Get value session
+
+*****************************
+import code in JSP
+<%!  %> Code in here
+<%   %> compile
+<%=  %> add code
+- request.getcontextPath();
+https://go.codetogether.com/#/YpzeilaGVjzSvIaSwsDwHR/5mFdOnmCdd6bL2jeCRIYt0
+
+**************************************************
+1.maven based project
+-build(automatic build) compile->packaginf -> deploy
+-web -> maven(XML), gradle(text)
+-android ->gradle(default)
+-depencencies (need *.jar)
+	-dowload, rejection
+2.config maven
+- settings.xml
+	+ directory of your PC
+	<localRepository> your path </localRepository>
+-pom.xml
+	+ typescript project build (viet cac cau hinh cho project trong nay)
+	+<project>
+		Project info
+		<dependencies>
+			<dependency>....
+		</dependencies>
+		<build>
+		    info to build
+		</build>
+	 </project>
+	
+path ?
+-project's directory
+{project}/
+	src/main/java <- sourceDirectory
+	src/main/recources <-
+
+maven build (goal)
+1.complie -> mvn compile
+2.test
+3.package ->khi build sẽ tạo ra *.jar, *.war	| được dùng nhìu
+4.install -> lưu vào trong localRepository	|
+5.deploy -> mvn deploy (nếu chạy ở đây thì nó sẽ chạy luôn cả 1,2,3,4). lưu vào trong remoteRepository
+
+command
+-clean
+-site (create document site for project)

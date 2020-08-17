@@ -1,0 +1,32 @@
+package td.kits3.livedinner.dao;
+
+//import tp.kits3.servlet.Book;
+import java.util.List;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+import tp.kits3.livedinner.io.Book;
+
+public class BookDao {
+	private DataSource ds;
+	
+	public BookDao() {
+		
+		try {
+			Context ctx = new InitialContext();
+			this.ds = (DataSource) ((Context) ctx.lookup("java:/comp/env")).lookup("jdbc/mariadb");
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public List<Book> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

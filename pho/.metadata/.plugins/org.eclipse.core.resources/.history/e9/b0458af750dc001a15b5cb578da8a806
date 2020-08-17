@@ -1,0 +1,10 @@
+package td.kits3.livedinner.dao;
+
+public class CategoryDao {
+
+	public void findAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

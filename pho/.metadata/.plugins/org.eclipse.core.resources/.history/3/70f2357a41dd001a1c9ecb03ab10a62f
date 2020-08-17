@@ -1,0 +1,32 @@
+package td.kits3.livedinner.dao;
+
+import java.util.List;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+import tp.kits3.livedinner.io.Menu;
+
+public class MenuDao {
+	private DataSource ds;
+	
+	public MenuDao() {
+		try {
+			Context ctx = new InitialContext();
+			//get info to tomcat
+			Context envCtx = (Context) ctx.lookup("java:/comp/env");
+			//get info to context.xml
+			this.ds = (DataSource) envCtx.lookup("jdbc/mariadb");
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	public List<Menu> findAll() {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
+
+}

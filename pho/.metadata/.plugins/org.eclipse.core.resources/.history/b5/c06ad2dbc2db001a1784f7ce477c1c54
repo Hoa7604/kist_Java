@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		POST<br>
+		<form method="post" action="login">
+			ID : <input type="text" name="uname" placeholder="input your id here"></br>
+			PW : <input type="password" name="upass" placeholder="input your password here"></br>
+			<input type="submit" value = "LOGIN">
+			<input type="reset" value = "CLEAR">
+		</form>
+		
+	</div>
+</body>
+</html>

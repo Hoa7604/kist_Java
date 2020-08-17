@@ -33,34 +33,34 @@
 	<!-- Start header -->
 	<header>
 		<nav>
-			<div>
+			<div class="container">
 				<a href="index.html">
 					<img src="images/logo.png" alt="" />
 				</a>
 				<button type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-				  <span></span>
+				  <span>Search</span>
 				</button>
 				<div id="navbars-rs-food">
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="menu.html">Menu</a></li>
-						<li><a href="about.html">About</a></li>
-						<li>
-							<a href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
-							<div aria-labelledby="dropdown-a">
+						<li><a class="active" href="index.html">Home</a></li>
+						<li><a href="#">Menu</a></li>
+						<li><a href="#">About</a></li>
+						<li >
+							<a href="#" id="dropdown-a" onclick="show('subPage')" data-toggle="dropdown">Pages</a><br>
+							<div id="subPage" class="drop-menu" aria-labelledby="dropdown-a">
 								<a href="reservation.html">Reservation</a>
 								<a href="stuff.html">Stuff</a>
 								<a href="gallery.html">Gallery</a>
 							</div>
 						</li>
 						<li>
-							<a href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
-							<div aria-labelledby="dropdown-a">
+							<a href="#" id="dropdown-a" onclick="show('subBlog')" data-toggle="dropdown">Blog</a>
+							<div id = "subBlog" class="drop-menu" aria-labelledby="dropdown-a">
 								<a href="blog.html">blog</a>
-								<a href="blog-details.html">blog Single</a>
+								<a href="blog-details.html">Blog Single</a>
 							</div>
 						</li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="#">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -69,10 +69,10 @@
 	<!-- End header -->
 	
 	<!-- Start All Pages -->
-	<div >
-		<div >
-			<div >
-				<div >
+	<div class="all-pages">
+		<div class="container">
+			<div class="row">
+				<div class="wrap">
 					<h1>Contact</h1>
 				</div>
 			</div>
@@ -82,56 +82,95 @@
 	
 	<!-- Start Contact -->
 	<div></div>
-	<div>
-		<div >
-			<div >
-				<div >
-					<div >
+	<div class="contact-box-start">
+		<div class="container">
+			<div class="row">
+				<div class="title-box">
+					<div class="wrap-title">
 						<h2>Contact</h2>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
 					</div>
 				</div>
 			</div>
-			<div >
-				<div >
+			<div class="row">
+				<div class="wrap-form">
 					<form id="contactForm">
-						<div >
-							<div >
-								<div >
+						<div class="wrap-sub-form">
+							<div class="wrap wrap-user">
+								<div class=" box user-box">
+									Name: 
 									<input type="text" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
-									<div ></div>
 								</div>                                 
 							</div>
-							<div >
-								<div >
+							<div class="wrap  wrap-phone">
+								<div class="box phone-box">
+									Phone: 
+									<input type="phone" id="priphone" name="priphone" placeholder="Your Phone" required data-error="Please enter your priphone">
+									<input type="phone" id="subphone" name="subphone" placeholder="Your Phone" data-error="Please enter your subphone">
+								</div>                                 
+							</div>
+							<div class="wrap  wrap-mail">
+								<div class="box email-box">
+									Email: 
 									<input type="text" placeholder="Your Email" id="email" name="name" required data-error="Please enter your email">
 									<div ></div>
 								</div> 
 							</div>
-							<div >
-								<div >
-									<select id="guest" required data-error="Please Select Person">
-									  <option disabled selected>Please Select Person*</option>
-									  <option value="1">1</option>
-									  <option value="2">2</option>
-									  <option value="3">3</option>
-									  <option value="4">4</option>
-									  <option value="5">5</option>
-									</select>
+							<div class="wrap  wrap-address">
+								<div class="box address-box">
+									Address: 
+									<input type="text" placeholder="Your address" id="address" name="address" required data-error="Please enter your email">
 									<div ></div>
 								</div> 
 							</div>
-							<div >
-								<div > 
-									<textarea id="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
+							<div class="wrap  wrap-check">
+								<div class="box check-box">
+									Checkbox: 
+									<input type="checkbox" id="unused" name="unused"  data-error="Please enter your check">
+									<div ></div>
+								</div> 
+							</div>
+							<div class="wrap  wrap-opening">
+								<div class="box opening-box">
+									Opening: 
+									<input type="text" placeholder="Your opening" id="opening" name="opening" required data-error="Please enter your opening">
+									<div ></div>
+								</div> 
+							</div>
+							<div class="wrap  wrap-weekday">
+								<div class="box weekday-box">
+									Weekday: 
+									<input type="text" placeholder="Your weekday" id="weekday" name="weekday" required data-error="Please enter your weekday">
+									<div ></div>
+								</div> 
+							</div>
+							<div class="wrap wrap-weekend">
+								<div class="box weekend-box">
+									<input type="text" placeholder="Your weekend" id="weekend" name="weekend" required data-error="Please enter your weekend">
+									<div ></div>
+								</div> 
+							</div>
+							<div class="wrap  wrap-aboutus" >
+								<div class="box aboutus-box"> 
+									About Us: 
+									<textarea id="aboutus" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
 									<div ></div>
 								</div>
-								<div >
-									<button id="submit" type="submit">Send Message</button>
-									<div id="msgSubmit"></div> 
-									<div ></div> 
-								</div>
 							</div>
+							<div class="wrap  wrap-latitude">
+								<div class="box latitude-box">
+									Latitude: 
+									<input type="text" placeholder="Your latitude" id="latitude" name="latitude" required data-error="Please enter your latitude">
+									<input type="text" placeholder="Your logitude" id="logitude" name="logitude" required data-error="Please enter your logitude">
+									<div ></div>
+								</div> 
+							</div>
+							<div class="wrap  wrap-submit">
+								<div class="box submit-box">
+									<input type="submit" name="submit" value="Submit">
+								</div> 
+							</div>
+							
 						</div>            
 					</form>
 				</div>
@@ -141,35 +180,38 @@
 	<!-- End Contact -->
 	
 	<!-- Start Contact info -->
-	<div>
-		<div >
-			<div >
-				<div>
-					<i></i>
-					<div>
+	<div class="contact-box">
+		<div class="container">
+			<div class="row" >
+				<div class="wrap-item">
+					<i class="mof-fa fa fa-volume-control-phone" aria-hidden="true"></i>
+					<div class=" wrap-common wrap-phone ">
 						<h4>Phone</h4>
 						<p>
 							+01 123-456-4590
 						</p>
 					</div>
+					<i class="mof-arrow fa fa-angle-double-right" aria-hidden="true"></i>
 				</div>
-				<div>
-					<i></i>
-					<div>
+				<div class="wrap-item">
+					<i class="mof-fa fa fa-envelope" aria-hidden="true"></i>
+					<div class=" wrap-common wrap-email">
 						<h4>Email</h4>
 						<p>
 							yourmail@gmail.com
 						</p>
 					</div>
+					<i class="mof-arrow fa fa-angle-double-right" aria-hidden="true"></i>
 				</div>
-				<div>
-					<i></i>
-					<div>
+				<div class="wrap-item">
+					<i class="mof-fa fa fa-map-marker" aria-hidden="true"></i>
+					<div class=" wrap-common wrap-location">
 						<h4>Location</h4>
 						<p>
 							800, Lorem Street, US
 						</p>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -178,15 +220,15 @@
 	
 	<!-- Start Footer -->
 	<footer>
-		<div >
-			<div >
-				<div>
+		<div class="container">
+			<div class="row">
+				<div class="wrap-items">
 					<h3>About Us</h3>
 					<p>Integer cursus scelerisque ipsum id efficitur. Donec a dui fringilla, gravida lorem ac, semper magna. Aenean rhoncus ac lectus a interdum. Vivamus semper posuere dui.</p>
 				</div>
-				<div>
+				<div class="wrap-items">
 					<h3>Subscribe</h3>
-					<div>
+					<div class="wrap-form">
 						<form>
 							<input name="EMAIL" id="subs-email" placeholder="Email Address..." type="email">
 							<button type="submit" >SUBSCRIBE</button>
@@ -201,13 +243,13 @@
 						<li><a href="#"><i aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
-				<div>
+				<div class="wrap-items">
 					<h3>Contact information</h3>
 					<p>Ipsum Street, Lorem Tower, MO, Columbia, 508000</p>
 					<p><a href="#">+01 2000 800 9999</a></p>
 					<p><a href="#"> info@admin.com</a></p>
 				</div>
-				<div>
+				<div class="wrap-items">
 					<h3>Opening hours</h3>
 					<p><span>Monday: </span>Closed</p>
 					<p><span>Tue-Wed :</span> 9:Am - 10PM</p>
@@ -217,12 +259,12 @@
 			</div>
 		</div>
 		
-		<div>
-			<div >
-				<div >
+		<div class="container">
+			<div class="row">
+				<div class="wrap-bottom">
 					<div>
 						<p>All Rights Reserved. &copy; 2018 <a href="#">Live Dinner Restaurant</a> Design By : 
-					<a href="#">html design</a></p>
+						<a href="#">html design</a></p>
 					</div>
 				</div>
 			</div>

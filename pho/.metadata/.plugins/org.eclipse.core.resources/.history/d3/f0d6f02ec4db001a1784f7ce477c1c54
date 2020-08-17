@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <div>
+ 	<h1>GUGU DAN if</h1>
+ 	<ul></ul>
+		get<br>
+		<form method="get" action="login4">
+			DAN: <input type="text" name = "dan" value="">
+			<input type="submit" value = "Print">
+		</form>
+	</div>
+</body>
+</html>
