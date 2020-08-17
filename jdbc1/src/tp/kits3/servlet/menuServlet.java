@@ -1,6 +1,8 @@
 package tp.kits3.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class menuServlet
  */
-@WebServlet("/menu")
+@WebServlet("/menu/list")
 public class menuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 //    private static String driverManager;
@@ -35,6 +37,12 @@ public class menuServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 //		Class.forName(driverManager);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String profix = "/WEB-INF/views/";
+		String subfix = ".jsp";
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(profix+"menu"+subfix);
+		dispatcher.forward(request, response);
 	}
 
 	/**

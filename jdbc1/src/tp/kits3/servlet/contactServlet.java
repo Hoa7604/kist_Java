@@ -44,8 +44,13 @@ public class contactServlet extends HttpServlet {
 			System.out.println("List none");
 		}
 		response.getWriter().append("Served at: ");
+		response.sendRedirect("/jdbc1/category/list");
+//		response.setStatus(response.SC_MOVED_PERMANENTLY);
+//		response.setHeader("Location", "/category/list");
 	}
-
+	
+	
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
