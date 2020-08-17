@@ -37,12 +37,21 @@ public class ContactAddServlet extends HttpServlet {
 		form += "Contact.priphone: <input type='text' name='priphone' require/><br>";
 		form += "Contact.subphone: <input type='text' name='subphone' /><br>";
 		form += "Contact.email: <input type='address' name='email' require/><br>";
+<<<<<<< HEAD
 		form += "Contact.address: <input type='text' name='address' /><br>";
 		form += "Contact.unused: <input type='checkbox' name='unused' /><br>";
 		form += "Contact.openning: <input type='text' name='opening' /><br>";
 		form += "Contact.weekday: <input type='text' name='weekday' /><br>";
 		form += "Contact.weekend: <input type='text' name='weekend' /><br>";
 		form += "Contact.aboutus: <input type='text' name='aboutus' /><br>";
+=======
+		form += "Contact.address: <input type='text' name='address' require/><br>";
+		form += "Contact.unused: <input type='checkbox' name='unused' /><br>";
+		form += "Contact.openning: <input type='text' name='opening' require/><br>";
+		form += "Contact.weekday: <input type='text' name='weekday' require/><br>";
+		form += "Contact.weekend: <input type='text' name='weekend' require/><br>";
+		form += "Contact.aboutus: <input type='text' name='aboutus' require/><br>";
+>>>>>>> 43f35c49a28213dffab30ebc2dca4b2ac0037650
 		form += "Contact.latitude: <input type='text' name='latitude' /><br>";
 		form += "Contact.logitude: <input type='text' name='logitude' />";
 		form += " <input type='submit' value='Submit' />";
@@ -63,6 +72,7 @@ public class ContactAddServlet extends HttpServlet {
 		contact.setSubphone(request.getParameter("subphone"));
 		contact.setEmail(request.getParameter("email"));
 		contact.setAddress(request.getParameter("address"));
+<<<<<<< HEAD
 		Boolean a = true;
 		String unused = request.getParameter("unused");
 		if (unused == null) {
@@ -72,6 +82,15 @@ public class ContactAddServlet extends HttpServlet {
 		}
 		contact.setUnused(a);		
 		
+=======
+		boolean a = true;
+		if (request.getParameter("unused") != null) {
+			a = true;
+		}else {
+			a = false;
+		}
+		contact.setUnused(a);
+>>>>>>> 43f35c49a28213dffab30ebc2dca4b2ac0037650
 		contact.setOpening(request.getParameter("opening"));
 		contact.setWeekday(request.getParameter("weekday"));
 		contact.setWeekend(request.getParameter("weekend"));

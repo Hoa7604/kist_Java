@@ -13,8 +13,8 @@ import java.util.List;
 import tp.kits3.livedinner.io.Tag;
 
 public class TagDao {
-	private final String driver = "org.mariadb.jdbc.Driver";
-	private final String connectionDB = "jdbc:mariadb://localhost:3306/livedinner";
+	private final String driver = "com.mysql.jdbc.Driver";
+	private final String connectionDB = "jdbc:mysql://localhost:3306/livedinner";
 	private final String user = "root";
 	private final String pass = "123456";
 	private Connection conn;

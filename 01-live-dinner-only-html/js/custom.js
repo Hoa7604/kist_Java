@@ -2,8 +2,20 @@ window.onload = function(){
     document.captureEvents(MouseEvent);
     document.onmousedown = mouseEvent;
 
+    //active class
+    activeChanges = document.querySelectorAll('li a');
+    for (let i = 0; i < activeChanges.length; i++) {
 
+        activeChanges[i].addEventListener('click', function(){
+            var acCurrent = document.getElementsByClassName('active');
+            acCurrent[0].className = acCurrent[0].className.replace('active', '');
+            // console.log(this.className);
+            this.className += 'active';
+            
+        });
+    }
 
+   
 }
 
 function mouseEvent(e){
@@ -13,21 +25,12 @@ function mouseEvent(e){
             showIdx[i].style.display = 'none';
         }
     }
-    
 }
 
-//active class
-activeChanges = document.querySelectorAll('li a');
-    for (let i = 0; i < activeChanges.length; i++) {
-        activeChanges[i].addEventListener('click', function(){
-            var acCurrent = document.getElementsByClassName('active');
-            acCurrent[0].className = acCurrent[0].className.replace('active', '');
-            this.className += 'active';
-        });
-}
+
 // activeChange();
 activeSideChange = document.querySelectorAll('#v-pills-tab a');
-console.log(activeSideChange);
+// console.log(activeSideChange);
     for (let i = 0; i < activeSideChange.length; i++) {
         activeSideChange[i].addEventListener('click', function(){
             var acCurrent = document.getElementsByClassName('active');
@@ -38,24 +41,52 @@ console.log(activeSideChange);
 
 //menu show
 function show(divId){
-    showIdx = document.querySelectorAll('.drop-menu');
+    showIdx = document.querySelectorAll('.drop-menu');  
+    heightLi = document.querySelector('#navbars-rs-food ul li');
+
     for(var i = 0; i < showIdx.length; i++)
     {
-        if (showIdx[i].id != divId) {
+        if (showIdx[i].id == divId) {
+            showIdx[i].style.display = 'block';
+        }else{
             showIdx[i].style.display = 'none';
         }
     }
-
     subId = document.getElementById(divId);
-    if (subId.style.display == 'block') {
+    if (subId.style.display == 'block'  ) {
         subId.style.display = 'none';
     }else{
         subId.style.display = 'block';
     }
 }
 
-//autoSlider
+// -------
+// btnClick = document.querySelectorAll('#dropdown-a');
+// showSubMenu = document.querySelectorAll('.drop-menu');
+// indx1 = document.getElementById('subPage');
+// indx2 = document.getElementById('subBlog');
+// for (let j = 0; j < showSubMenu.length; j++) {
+//     if (showSubMenu[j].id != indx1 &&  showSubMenu[j].id != indx2) {
+//         showSubMenu[j].style.display = 'none';
+//     }
+// }   
+// for (let i = 0; i < btnClick.length; i++) {  
+//     btnClick[i].addEventListener('click', function(){
+//         if (indx1.style.display == 'block') {
+//             indx1.style.display == 'none';
+//         }else{
+//             indx1.style.display == 'block';
+//         }
 
+//         if (indx2.style.display == 'block') {
+//             indx2.style.display == 'none';
+//         }else{
+//             indx2.style.display == 'block';
+//         }
+//     });
+// } 
+
+//autoSlider
 var slideAuto = 0;
 autoSlide();
 

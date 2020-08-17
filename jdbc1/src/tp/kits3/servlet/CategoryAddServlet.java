@@ -32,7 +32,7 @@ public class CategoryAddServlet extends HttpServlet {
 		// TODO show form insert
 //		int ctgid = Integer.parseInt(request.getParameter("ctgid"));
 //		System.out.println(ctgid);
-		CategoryDao dao = new CategoryDao();
+//		CategoryDao dao = new CategoryDao();
 //		Category category = dao.findOne(ctgid); //selectOne
 		String form = "<div>";
 		form += "<form method='post' action='add'>" ;
@@ -53,9 +53,9 @@ public class CategoryAddServlet extends HttpServlet {
 		Category category = new Category();
 		category.setCtname(request.getParameter("ctname"));
 		category.setService(request.getParameter("service"));
-		
+		category.toString();
 		dao.save(category);
-		response.sendRedirect("/jdbc1/category/add");
+//		response.sendRedirect("/jdbc1/category/add");
 //		doGet(request, response);
 	}
 

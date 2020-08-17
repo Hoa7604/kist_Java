@@ -23,7 +23,7 @@ import tp.kits3.livedinner.io.Tag;
  * 
  * Servlet implementation class tagServlet */
 
-@WebServlet("/tag/*")
+@WebServlet("/tag")
 public class tagServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 //      private Connection conn;
@@ -113,6 +113,8 @@ public class tagServlet extends HttpServlet {
 			}
 			table += "</table>";
 			response.getWriter().println(table);
+		}else {
+			System.out.println("null list");
 		}
 		
 		

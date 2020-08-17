@@ -33,34 +33,34 @@
 	<!-- Start header -->
 	<header>
 		<nav>
-			<div>
+			<div class="container">
 				<a href="index.html">
 					<img src="images/logo.png" alt="" />
 				</a>
 				<button type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-				  <span></span>
+				  <span>Search</span>
 				</button>
 				<div id="navbars-rs-food">
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="menu.html">Menu</a></li>
-						<li><a href="about.html">About</a></li>
-						<li>
-							<a href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
-							<div aria-labelledby="dropdown-a">
+						<li><a class="active" href="#">Home</a></li>
+						<li><a href="#">Menu</a></li>
+						<li><a href="#">About</a></li>
+						<li >
+							<a href="#" id="dropdown-a" onclick="show('subPage')" data-toggle="dropdown">Pages</a><br>
+							<div id="subPage" class="drop-menu" aria-labelledby="dropdown-a">
 								<a href="reservation.html">Reservation</a>
 								<a href="stuff.html">Stuff</a>
 								<a href="gallery.html">Gallery</a>
 							</div>
 						</li>
 						<li>
-							<a href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
-							<div aria-labelledby="dropdown-a">
+							<a href="#" id="dropdown-a" onclick="show('subBlog')" data-toggle="dropdown">Blog</a>
+							<div id = "subBlog" class="drop-menu" aria-labelledby="dropdown-a">
 								<a href="blog.html">blog</a>
-								<a href="blog-details.html">blog Single</a>
+								<a href="blog-details.html">Blog Single</a>
 							</div>
 						</li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="#">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -81,35 +81,35 @@
 	<!-- End All Pages -->
 	
 	<!-- Start Menu -->
-	<div>
-		<div >
-			<div >
-				<div >
-					<div >
+	<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<div class="title-box">
+					<div class="wrap-title">
 						<h2>Special Menu</h2>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
 					</div>
 				</div>
 			</div>
 			
-			<div >
-				<div >
-					<div id="v-pills-tab" role="tablist" aria-orientation="vertical">
-						<a id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">All</a>
-						<a id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Drinks</a>
-						<a id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Lunch</</a>
-						<a id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Dinner</a>
+			<div class="row">
+				<div class="side-left">
+					<div id="v-pills-tab" role="tablist" aria-orientation="vertical" class="wrap-pills-tab">
+						<a id="v-pills-home-tab" onclick="sideMenu('v-pills-home')" data-toggle="pill"  role="tab" aria-controls="v-pills-home" aria-selected="true">All</a>
+						<a id="v-pills-profile-tab" onclick="sideMenu('v-pills-profile')" data-toggle="pill"  role="tab" aria-controls="v-pills-profile" aria-selected="false">Drinks</a>
+						<a id="v-pills-messages-tab" onclick="sideMenu('v-pills-messages')" data-toggle="pill" role="tab" aria-controls="v-pills-messages" aria-selected="false">Lunch</</a>
+						<a id="v-pills-settings-tab" onclick="sideMenu('v-pills-settings')" data-toggle="pill"  role="tab" aria-controls="v-pills-settings" aria-selected="false">Dinner</a>
 					</div>
 				</div>
 				
-				<div >
+				<div class="side-right">
 					<div id="v-pills-tabContent">
-						<div id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-							<div >
-								<div >
-									<div >
+						<div id="v-pills-home"  role="tabpanel" aria-labelledby="v-pills-home-tab" class="wrap-pills" >
+							<div class="row">
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-01.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Drinks 1</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $7.79</h5>
@@ -117,10 +117,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery" >
 										<img src="images/img-02.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text" >
 											<h4>Special Drinks 2</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $9.79</h5>
@@ -128,10 +128,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-03.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Drinks 3</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $10.79</h5>
@@ -139,10 +139,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-04.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Lunch 1</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $15.79</h5>
@@ -150,10 +150,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-05.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Lunch 2</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $18.79</h5>
@@ -161,10 +161,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-06.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Lunch 3</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $20.79</h5>
@@ -172,10 +172,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-07.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Dinner 1</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $25.79</h5>
@@ -183,10 +183,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-08.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Dinner 2</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $22.79</h5>
@@ -194,10 +194,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-09.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text" >
 											<h4>Special Dinner 3</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $24.79</h5>
@@ -207,12 +207,12 @@
 							</div>
 							
 						</div>
-						<div id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-							<div >
-								<div >
-									<div >
+						<div id="v-pills-profile"  role="tabpanel" aria-labelledby="v-pills-profile-tab" class="wrap-pills">
+							<div class="row">
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-01.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text" >
 											<h4>Special Drinks 1</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $7.79</h5>
@@ -220,10 +220,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div  class="sub-gallery">
 										<img src="images/img-02.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text" >
 											<h4>Special Drinks 2</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $9.79</h5>
@@ -231,10 +231,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-03.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text"  >
 											<h4>Special Drinks 3</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $10.79</h5>
@@ -244,12 +244,12 @@
 							</div>
 							
 						</div>
-						<div id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-							<div >
-								<div >
-									<div >
+						<div id="v-pills-messages"  role="tabpanel" aria-labelledby="v-pills-messages-tab" class="wrap-pills">
+							<div class="row">
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-04.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Lunch 1</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $15.79</h5>
@@ -257,10 +257,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-05.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Lunch 2</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $18.79</h5>
@@ -268,10 +268,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery" >
 										<img src="images/img-06.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Lunch 3</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $20.79</h5>
@@ -280,12 +280,12 @@
 								</div>
 							</div>
 						</div>
-						<div id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-							<div >
-								<div >
-									<div >
+						<div id="v-pills-settings"  role="tabpanel" aria-labelledby="v-pills-settings-tab" class="wrap-pills">
+							<div class="row">
+								<div class="special-div">
+									<div class="sub-gallery" >
 										<img src="images/img-07.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Dinner 1</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $25.79</h5>
@@ -293,10 +293,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-08.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Dinner 2</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $22.79</h5>
@@ -304,10 +304,10 @@
 									</div>
 								</div>
 								
-								<div >
-									<div >
+								<div class="special-div">
+									<div class="sub-gallery">
 										<img src="images/img-09.jpg" alt="Image">
-										<div >
+										<div class="wrap-detail-text">
 											<h4>Special Dinner 3</h4>
 											<p>Sed id magna vitae eros sagittis euismod.</p>
 											<h5> $24.79</h5>
@@ -319,6 +319,7 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 	<!-- End Menu -->

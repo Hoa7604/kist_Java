@@ -20,7 +20,7 @@ public class ContactDAO {
 			//get info to tomcat
 			Context envCtx = (Context) ctx.lookup("java:/comp/env");
 			//get info to context.xml
-			this.datasource = (DataSource) envCtx.lookup("jdbc/mariadb");
+			this.datasource = (DataSource) envCtx.lookup("jdbc/mysql");
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -32,6 +32,7 @@ public class ContactDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+//		System.out.println(contact.toString());
 		try {
 			conn = this.datasource.getConnection();
 			String insert = "insert into contact (coname, priphone, subphone, email, address, unused, opening, weekday, weekend, aboutus, latitude, logitude) values(?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -41,6 +42,7 @@ public class ContactDAO {
 			pstmt.setString(3,  contact.getSubphone());
 			pstmt.setString(4,  contact.getEmail());
 			pstmt.setString(5, contact.getAddress());
+<<<<<<< HEAD
 			pstmt.setBoolean(6, contact.getUnused());		
 			pstmt.setString(7, contact.getOpening());
 			pstmt.setString(8, contact.getWeekday());
@@ -48,6 +50,16 @@ public class ContactDAO {
 			pstmt.setString(10, contact.getAboutus());
 			pstmt.setDouble(11, contact.getLatitude());
 			pstmt.setDouble(12, contact.getLogitude());
+=======
+			pstmt.setBoolean(6, contact.getUnused());	
+			pstmt.setString(7, contact.getOpening());
+			pstmt.setString(8, contact.getWeekday());
+			pstmt.setString(9,  contact.getWeekend());
+			pstmt.setString(10, contact.getAboutus());
+			pstmt.setDouble(11,  contact.getLatitude());
+			pstmt.setDouble(12,  contact.getLogitude());
+			
+>>>>>>> 43f35c49a28213dffab30ebc2dca4b2ac0037650
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception

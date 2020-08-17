@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+<<<<<<< HEAD
     pageEncoding="UTF-8"
     import="java.util.List"
     import="tp.kits3.livedinner.io.Menu"
@@ -496,5 +497,16 @@
 	<!-- ALL JS FILES -->
     <!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>
+=======
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+>>>>>>> 43f35c49a28213dffab30ebc2dca4b2ac0037650
 </body>
 </html>
