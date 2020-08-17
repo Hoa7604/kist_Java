@@ -8,6 +8,7 @@ import java.io.IOException;
 //import java.sql.Statement;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -82,6 +83,10 @@ public class tagServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		ServletContext ctx = getServletContext();
+		ctx.getAttribute("menu");
+		
 		//PathVariable <--spring framework famous
 		String[] uri = request.getRequestURI().split("/"); //,<- what command
 		String command = uri[(uri.length - 1)];

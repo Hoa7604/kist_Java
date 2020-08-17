@@ -1,0 +1,20 @@
+package td.kits3.livedinner.dao;
+
+import java.util.List;
+
+import tp.kits3.livedinner.io.Category;
+/*
+ * 
+ * use DataSource and connection Pool
+ * @author bitcamp
+ * 
+ */
+public class CategoryDao {
+
+	public List<Category> findAll() {
+		return null;
+		// TODO Auto-generated method stub
+		
+	}
+
+}

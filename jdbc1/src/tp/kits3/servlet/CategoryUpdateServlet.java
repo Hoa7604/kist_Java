@@ -69,7 +69,7 @@ public class CategoryUpdateServlet extends HttpServlet {
 //		System.out.println(category.toString());
 		
 		//passing to Servlet, URL
-		response.sendRedirect("/jdbc1/category/list");
+//		response.sendRedirect("/jdbc1/category/list");
 	}
 
 }

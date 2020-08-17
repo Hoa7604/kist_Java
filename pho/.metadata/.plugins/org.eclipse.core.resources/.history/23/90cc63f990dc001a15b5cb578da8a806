@@ -1,0 +1,60 @@
+package tp.kits3.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import td.kits3.livedinner.dao.ContactDAO;
+
+/**
+ * Servlet implementation class ContactAddServlet
+ */
+@WebServlet("/contact/add")
+public class ContactAddServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ContactAddServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		ContactDAO contactdao = new ContactDAO();
+		String form = "<div>";
+		form += "<form method='post' action='add' >";
+		form += "Contact.name <input type='text' name='coname' require/><br>";
+		form += "Contact.priphone <input type='text' name='priphone' require/><br>";
+		form += "Contact.subphone <input type='text' name='subphone' require/><br>";
+		form += "Contact.emani <input type='text' name='email' require/><br>";
+		form += "Contact.address <input type='text' name='address' require/><br>";
+		form += "Contact.unused <input type='text' name='unused' require/><br>";
+		form += "Contact.openning <input type='text' name='openning' require/><br>";
+		form += "Contact.weekday <input type='text' name='weekday' require/><br>";
+		form += "Contact.weekend <input type='text' name='weekend' require/><br>";
+		form += "Contact.aboutus <input type='text' name='aboutus' require/><br>";
+		form += "Contact.latitude <input type='text' name='latitude' require/><br>";
+		form += "Contact.logitude <input type='text' name='logitude' require/>";
+		
+		form += "</form></div>";
+		response.getWriter().append(form);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

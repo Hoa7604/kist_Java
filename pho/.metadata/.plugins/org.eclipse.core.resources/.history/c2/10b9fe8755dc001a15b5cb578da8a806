@@ -1,0 +1,34 @@
+package td.kits3.livedinner.dao;
+
+import java.util.List;
+
+//Java Name DI
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import tp.kits3.livedinner.io.Category;
+/*
+ * 
+ * use DataSource and connection Pool
+ * @author bitcamp
+ * 
+ */
+public class CategoryDao {
+
+	public CategoryDao() {
+		//super() su dung super khi co externs
+		try {
+			Context ctx = new InitialContext(); //khoi tao
+			Context envCtx = (Context)ctx.lookup("java:/comp/env"); //search to servlet container
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} //
+	}
+	public List<Category> findAll() {
+		return null;
+		// TODO Auto-generated method stub
+	}
+
+}

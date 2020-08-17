@@ -16,6 +16,10 @@
 header {
     padding-top: 5px;
     width: 100%;
+<<<<<<< HEAD
+    /* background-color: #353b47; */
+=======
+>>>>>>> 43f35c49a28213dffab30ebc2dca4b2ac0037650
     /* position: fixed;  */
     z-index: 100;
 }

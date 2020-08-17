@@ -2,6 +2,7 @@ window.onload = function(){
     document.captureEvents(MouseEvent);
     document.onmousedown = mouseEvent;
 
+<<<<<<< HEAD
     //active class
     activeChanges = document.querySelectorAll('li a');
     for (let i = 0; i < activeChanges.length; i++) {
@@ -16,6 +17,10 @@ window.onload = function(){
     }
 
    
+=======
+
+
+>>>>>>> 10115c25255c0255dfe5cdd8e93d1a5c44cd94d9
 }
 
 function mouseEvent(e){
@@ -25,12 +30,30 @@ function mouseEvent(e){
             showIdx[i].style.display = 'none';
         }
     }
+<<<<<<< HEAD
 }
 
 
 // activeChange();
 activeSideChange = document.querySelectorAll('#v-pills-tab a');
 // console.log(activeSideChange);
+=======
+    
+}
+
+//active class
+activeChanges = document.querySelectorAll('li a');
+    for (let i = 0; i < activeChanges.length; i++) {
+        activeChanges[i].addEventListener('click', function(){
+            var acCurrent = document.getElementsByClassName('active');
+            acCurrent[0].className = acCurrent[0].className.replace('active', '');
+            this.className += 'active';
+        });
+}
+// activeChange();
+activeSideChange = document.querySelectorAll('#v-pills-tab a');
+console.log(activeSideChange);
+>>>>>>> 10115c25255c0255dfe5cdd8e93d1a5c44cd94d9
     for (let i = 0; i < activeSideChange.length; i++) {
         activeSideChange[i].addEventListener('click', function(){
             var acCurrent = document.getElementsByClassName('active');
@@ -41,6 +64,7 @@ activeSideChange = document.querySelectorAll('#v-pills-tab a');
 
 //menu show
 function show(divId){
+<<<<<<< HEAD
     showIdx = document.querySelectorAll('.drop-menu');  
     heightLi = document.querySelector('#navbars-rs-food ul li');
 
@@ -54,12 +78,25 @@ function show(divId){
     }
     subId = document.getElementById(divId);
     if (subId.style.display == 'block'  ) {
+=======
+    showIdx = document.querySelectorAll('.drop-menu');
+    for(var i = 0; i < showIdx.length; i++)
+    {
+        if (showIdx[i].id != divId) {
+            showIdx[i].style.display = 'none';
+        }
+    }
+
+    subId = document.getElementById(divId);
+    if (subId.style.display == 'block') {
+>>>>>>> 10115c25255c0255dfe5cdd8e93d1a5c44cd94d9
         subId.style.display = 'none';
     }else{
         subId.style.display = 'block';
     }
 }
 
+<<<<<<< HEAD
 // -------
 // btnClick = document.querySelectorAll('#dropdown-a');
 // showSubMenu = document.querySelectorAll('.drop-menu');
@@ -87,6 +124,10 @@ function show(divId){
 // } 
 
 //autoSlider
+=======
+//autoSlider
+
+>>>>>>> 10115c25255c0255dfe5cdd8e93d1a5c44cd94d9
 var slideAuto = 0;
 autoSlide();
 
