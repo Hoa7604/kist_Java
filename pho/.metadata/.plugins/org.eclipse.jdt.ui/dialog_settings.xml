@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.jdt.ui.lastextjar" value="D:\library"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="/Users/kfs/Downloads"/>
+	<item key="org.eclipse.jdt.ui.lastuserlibrary" value="/Volumes/DATA /library/tomcat-catalina-9.0.37.jar"/>
+	<item key="UserLibraryLoadSaveDialog.size" value="541,442"/>
+	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
+	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-1.8"/>
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="completion_proposal_size">
@@ -90,5 +94,12 @@
 		<item key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_HEIGHT" value="306"/>
 		<item key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION" value="false"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.wizards.buildpaths.NewVariableEntryDialog">
+		<item key="DIALOG_X_ORIGIN" value="188"/>
+		<item key="DIALOG_Y_ORIGIN" value="100"/>
+		<item key="DIALOG_WIDTH" value="625"/>
+		<item key="DIALOG_HEIGHT" value="347"/>
+		<item key="DIALOG_FONT_NAME" value="1|.Helvetica Neue DeskInterface|11.0|0|COCOA|1|.HelveticaNeueDeskInterface-Regular"/>
 	</section>
 </section>

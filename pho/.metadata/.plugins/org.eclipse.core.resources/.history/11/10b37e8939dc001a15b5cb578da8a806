@@ -1,6 +1,0 @@
-package td.kits3.livedinner.dao;
-
-public class TagDao {
-	//Connection here
-	//
-}

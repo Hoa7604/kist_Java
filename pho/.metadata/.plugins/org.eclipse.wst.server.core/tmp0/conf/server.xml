@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="D:\pho\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\pho\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jdbc1" path="/jdbc1" reloadable="true" source="org.eclipse.jst.jee.server:jdbc1"/><Context docBase="D:\pho\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\web-demo" path="/web-demo" reloadable="true" source="org.eclipse.jst.jee.server:web-demo"/><Context docBase="D:\pho\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\web-example-01" path="/web-example-01" reloadable="true" source="org.eclipse.jst.jee.server:web-example-01"/></Host>
+      <Context docBase="/Volumes/DATA /project_Web/kist_Java/pho/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Volumes/DATA /project_Web/kist_Java/pho/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/learntogether" path="/learntogether" reloadable="true" source="org.eclipse.jst.jee.server:learntogether"/></Host>
     </Engine>
   </Service>
 </Server>

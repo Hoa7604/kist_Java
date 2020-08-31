@@ -1,14 +1,7 @@
-INDEX VERSION 1.4+D:\pho\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1944136309.index
-2250184799.index
-2726688680.index
-2487587582.index
-2204954538.index
-1536574621.index
-3268239938.index
-167096081.index
-2082298314.index
-3635630337.index
-1366368835.index
-1713397377.index
-4178919815.index
+INDEX VERSION 1.4+/Volumes/DATA /project_Web/kist_Java/pho/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2220031968.index
+2355875111.index
+1895951956.index
+3460256561.index
+1328670543.index
+1956855528.index

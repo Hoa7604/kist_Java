@@ -42,7 +42,6 @@ public class ContactDAO {
 			pstmt.setString(3,  contact.getSubphone());
 			pstmt.setString(4,  contact.getEmail());
 			pstmt.setString(5, contact.getAddress());
-<<<<<<< HEAD
 			pstmt.setBoolean(6, contact.getUnused());		
 			pstmt.setString(7, contact.getOpening());
 			pstmt.setString(8, contact.getWeekday());

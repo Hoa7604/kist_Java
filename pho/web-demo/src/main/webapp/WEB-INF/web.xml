@@ -12,12 +12,12 @@
   
   <context-param>
     <param-name>updatePath</param-name>
-    <param-value>D:\pho\web-demo\uploads</param-value>
+    <param-value>DATA/project_Web/kist_Java/pho/web-demo/uploads</param-value>
   </context-param>
   
   <context-param>
     <param-name>downloadPath</param-name>
-    <param-value>D:\pho\web-demo\uploads</param-value>
+    <param-value>DATA\project_Web\kist_Java\pho\web-demo\uploads</param-value>
   </context-param>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
