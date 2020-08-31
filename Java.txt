@@ -94,7 +94,7 @@ path ?
 	src/main/java <- sourceDirectory
 	src/main/recources <-
 
-maven build (goal)
+maven build (goal) with plugin
 1.complie -> mvn compile
 2.test
 3.package ->khi build sẽ tạo ra *.jar, *.war	| được dùng nhìu
@@ -104,3 +104,37 @@ maven build (goal)
 command
 -clean
 -site (create document site for project)
+
+
+**********************************************************
+Mybatis 
+
+ 1. connection DB (mySQL/MariaDB connector .jar extends Driver implement (JDBC API)) so importty mariadb-client.jar 
+ 2. ask data to DB -> SQL API as Text ("select") - make sql 
+ 3. Statement/PreparedStatement -> send ~ -> (ResultSet) ~ get data
+  			- ResultSet <- DB
+  			- our type is Book
+  			- Convert REsulSet to Book
+ 4. type is different Model <- DB's type -> need converting
+ 
+  
+  
+ * use Mybatis lib (don't know our table name and column so we must create mapper.xml)
+ * sqlSessionFactory <-(truyen du lieu cho FactorySession) dv connection info (mybatis - config.xxml)
+ * sqlSession open ->send sql statement DB (mapper.xml)
+
+***************************************************************
+Spring
+
+usage folder of spring
+
+/src/main/java : java source
+/src/main/resource : config file
+/src/main/webapp : web contents
+/src/main/webapp/resource : *.css, , *.js, *.html, images <- static file
+/src/main/webapp/WEB-INF : *.classes .jsp, config xml <-- dynamic files
+
+
+*****************************************************************
+(=======Error=======) 
+- Request method 'GET' not supported

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="mappers.courseOrderMapper"> <!--like package of class-->
+	<!--no need loop result set-->
+	<resultMap type="courseOrderVO" id="courseOrderResult">
+		<result property="orderitemID" column="order_itemID" />
+		<!-- <result property="courseid" column="course_id"/>
+		<result property="orderid" column="order_id" />
+		<result property="quantity" column="quantity" /> -->
+	</resultMap>
+	
+	<!--make sql statement-->
+	<select id="selectAll" resultMap="courseOrderResult">
+		<![CDATA[
+			select * from course_order
+		]]>
+	</select>
+	<select id="selectOne" resultMap="courseOrderResult" parameterType="int">
+		<![CDATA[
+			select * from course_order
+			where order_itemID = #{orderitemID}
+		]]>
+	</select>
+	
+	<insert id="insert" parameterType="courseOrderVO" useGeneratedKeys="true" keyProperty="orderItemId">
+		<![CDATA[
+			insert into course_order (course_id, order_id)
+			values (#{courseid}, #{orderid})
+		]]>
+	</insert>
+	
+	<update id="update" parameterType="courseOrderVO">
+	<![CDATA[
+			update course_order set course_id = #{courseid},
+				orderid = #{order_id},
+			where order_itemID = #{orderitemID}
+		]]>
+	</update>
+	
+	
+	<delete id="delete" parameterType="int">
+		<![CDATA[
+			delete course_order
+			where order_itemID = #{order_itemID}
+		]]>
+	</delete>
+	
+</mapper>
