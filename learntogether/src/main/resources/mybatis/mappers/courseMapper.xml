@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="mappers.courseMapper"> <!--like package of class-->
+	<!--no need loop result set-->
+	<resultMap type="courseVO" id="courseResult">
+		<result property="id" column="id" />
+		<result property="courseTitle" column="courseTitle"/>
+		<result property="description" column="description"/>
+		<result property="priceCourse" column="priceCourse"/>
+		<result property="language" column="language"/>
+		<result property="numStudent" column="numStudent"/>
+		<result property="createDate" column="createDate"/>
+		<result property="lasteUpdate" column="lasteUpdate"/>
+		<result property="courseInfoId" column="courseInfo_id"/>
+		<result property="instructorId" column="instructor_id"/>
+		<result property="categoryId" column="category_id"/>
+		<result property="certificateId" column="certificate_id"/>
+		<result property="urlImg" column="urlimg"/>
+		<result property="status" column="status"/>
+	</resultMap>
+	
+	<!--make sql statement-->
+	
+	<select id="selectAll" resultMap="courseResult">
+		<![CDATA[
+			select * from course
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="courseResult" parameterType="int">
+		<![CDATA[
+			select * from course
+			where id = #{id}
+		]]>
+	</select>
+	
+	<insert id="insert" parameterType="courseVO" useGeneratedKeys="true" keyProperty="id">
+		<![CDATA[
+			insert into course (courseTitle, description, priceCourse, language, numStudent, createDate, lasteUpdate, courseInfoId, instructorId,  categoryId, certificateId, urlImg, status)
+			values ( #{courseTitle}, #{description}, #{priceCourse}, #{language}, #{numStudent}, #{createDate}, #{lasteUpdate}, #{courseInfo_id}, #{instructor_id},  #{category_id}, #{certificate_id}, #{urlimg}, #{status})
+		]]>
+	</insert>
+	
+	<update id="update" parameterType="courseVO">
+	<![CDATA[
+			update course
+			set  courseTitle = #{courseTitle}, 
+			description = #{description}, 
+			priceCourse = #{priceCourse}, 
+			language = #{language}, 
+			numStudent = #{numStudent}, 
+			createDate = #{createDate}, 
+			lasteUpdate = #{lasteUpdate}, 
+			courseInfoId = #{courseInfo_id}, 
+			instructorId = #{instructor_id},  
+			categoryId = #{category_id}, 
+			certificateId = #{certificate_id}, 
+			urlImg = #{urlimg}, 
+			status = #{status}
+			where id = #{id}
+		]]>
+	</update>
+	
+	
+	<delete id="delete" parameterType="int">
+		<![CDATA[
+			delete courses
+			where id = #{id}
+		]]>
+	</delete>
+	
+</mapper>
+
+

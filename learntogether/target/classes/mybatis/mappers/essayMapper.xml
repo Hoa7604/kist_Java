@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="mappers.essayMapper"> <!--like package of class-->
+	<!--no need loop result set-->
+	<resultMap type="essayVO" id="essayResult">
+		<result property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="testId" column="test_id" />
+
+	</resultMap>
+
+	<!--make sql statement-->
+	<select id="selectAll" resultMap="essayResult">
+		<![CDATA[
+			select * from essay
+		]]>
+	</select>
+	<select id="selectOne" resultMap="essayResult" parameterType="int">
+		<![CDATA[
+			select * from essay
+			where id = #{id}
+		]]>
+	</select>
+	
+	<insert id="insert" parameterType="essayVO" useGeneratedKeys="true" keyProperty="bkid">
+		<![CDATA[
+			insert into essay (title, test_id)
+			values (#{title}, #{test_id})
+		]]>
+	</insert>
+	
+	<update id="update" parameterType="essayVO">
+	<![CDATA[
+			update essay
+			set title =#{title},
+				test_id = #{bkemail},
+			where id = #{id}
+		]]>
+	</update>
+	
+</mapper>

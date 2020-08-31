@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd" >
+
+<configuration>
+	<!--1. class name's alias -->
+	<typeAliases>
+	<!-- 	<typeAlias type="tp.kits3.learntogether.vo.Lesson" alias="lessonVO"/>
+		<typeAlias type="tp.kits3.learntogether.vo.Invoice" alias="invoiceVO"/>
+		<typeAlias type="tp.kits3.learntogether.vo.Order" alias="orderVO"/> -->
+		<typeAlias type="tp.kits3.learntogether.vo.CourseOrder" alias="courseOrderVO" /> 
+		<typeAlias type="tp.kits3.learntogether.vo.Course" alias="courseVO"/>
+<!-- 		<typeAlias type="tp.kits3.learntogether.vo.Category" alias="categoryVO"/>
+		<typeAlias type="tp.kits3.learntogether.vo.Essay" alias="essayVO"/>
+		<typeAlias type="tp.kits3.learntogether.vo.Instructor" alias="instructorVO"/>
+		<typeAlias type="tp.kits3.learntogether.vo.ResultEssay" alias="resultessayVO"/>
+		<typeAlias type="tp.kits3.learntogether.vo.User" alias="resultessayVO"/> -->
+	</typeAliases>
+	<!--2. config DB connection info like tomcat context.xml DataSource -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="org.mariadb.jdbc.Driver"/>
+				<property name="url" value="jdbc:mariadb://localhost:3306/learncourses"/>
+				<property name="username" value="root"/>
+				<property name="password" value="123456"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!--mapper for each table-->
+	
+	<mappers>
+		<!--from /src/main/java-->
+		<!--
+		<mapper resource="mybatis/mappers/invoiceMapper.xml"/>
+		<mapper resource="mybatis/mappers/lessonMapper.xml"/>
+		<mapper resource="mybatis/mappers/orderMapper.xml"/>
+		<mapper resource="mybatis/mappers/instructorMapper.xml" />
+		<mapper resource="mybatis/mappers/essayMapper.xml" />
+		<mapper resource="mybatis/mappers/resultEssayMapper.xml" />
+		<mapper resource="mybatis/mappers/categoryMapper.xml" /> -->
+		<mapper resource="mybatis/mappers/courseOrderMapper.xml"/>
+		<mapper resource="mybatis/mappers/courseMapper.xml" />
+<!-- 		<mapper resource="mybatis/mappers/userMapper.xml" />  -->
+	</mappers>
+</configuration>

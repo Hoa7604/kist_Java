@@ -1,0 +1,40 @@
+.cart-header {display: inline-block;}
+.cart-header a{ color: #ffffff; margin: 0 20px; font-size: 20px;}
+.instructor-header{display: inline-block;}
+.instructor-header a{font-weight: bold;}
+
+.profile-header {
+    display: inline-block; 
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.profile-header a{
+    display: inline-block; 
+    border: 1px solid #ffffff; 
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.items-area {padding: 50px 0;}
+.padding-bottom{padding-bottom: 20px;}
+.items-area .container .row .col-xl-12 .img-item {display: inline-block;}
+.items-area .container .row .col-xl-12 .img-item a:hover{color: #000000;}
+.items-area .container .row .col-xl-12 .content-item {
+    padding-left: 50px; 
+    display: inline-block;
+    box-sizing: border-box;
+}
+.items-area .container .row .col-xl-12 .content-item .title-item {}
+.items-area .container .row .col-xl-12 .content-item .rating-item {}
+
+.items-area .container .row .col-xl-12 .crud-item { display: inline-block;}
+.items-area .container .row .col-xl-12 .crud-item a{
+    color: #42554a; 
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+mg-none{ margin: 0px}

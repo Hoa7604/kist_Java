@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="mappers.resultEssayMapper"> <!--like package of class-->
+	<!--no need loop result set-->
+	<resultMap type="resultEssayVO" id="rsEssayResult">
+		<result property="id" column="id" />
+		<result property="score" column="score" />
+		<result property="essayId" column="essay_id" />
+		<result property="instructorId" column="instructor_id" />
+		<result property="userId" column="user_id" />
+		
+	</resultMap>
+    
+	<!--make sql statement-->
+	<select id="selectAll" resultMap="rsEssayResult">
+		<![CDATA[
+			select * from result_essay
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="rsEssayResult" parameterType="int">
+		<![CDATA[
+			select * from result_essay
+			where bkid = #{id}
+		]]>
+	</select>
+	
+	<insert id="insert" parameterType="bookVO" useGeneratedKeys="true" keyProperty="bkid">
+		<![CDATA[
+			insert into book (bkname, bkemail, bkphone, bktime, bknum, booking, bkmemo)
+			values (#{bkname}, #{bkemail}, #{bkphone}, #{bktime}, #{bknum}, #{booking}, #{bkmemo})
+		]]>
+	</insert>
+	
+	<update id="update" parameterType="bookVO">
+	<![CDATA[
+			update result_essay
+			set score =#{score},
+			where user_id = #{userId}
+			and essay_id = #{essayId}
+		]]>
+	</update>
+	
+</mapper>
